@@ -1,0 +1,50 @@
+from part2 import *
+
+
+
+assignment = Assignment()
+# all = assignment.analyse("SmallShapeTest.data")
+all = assignment.analyse("smallshapetest.data")
+print('shape number is ' + str(assignment.shape_count()))
+print('max circle area is '+ str(assignment.max_circle_area()))
+print('min circle area is '+ str(assignment.min_circle_area()))
+print('max square area is '+str(assignment.max_square_area()))
+print('min square area is '+str(assignment.min_square_area()))
+print('mean circle area is '+str(assignment.mean_circle_area()))
+print('median circle area is '+str(assignment.median_circle_area()))
+print('median square area is '+str(assignment.median_square_area()))
+print('std_dev circle area is '+str(assignment.std_dev_circle_area()))
+print('std_dev square area is '+str(assignment.std_dev_square_area()))
+
+#Point test
+o = Point(0,0)
+x1 = Point(1,0)
+x11 = Point(1,1)
+x_1 = Point(-1,-1)
+# print(o.equals(x1))
+# print(o.equals(Point(0,0)))
+# print(o.distance(x11))
+
+#Circle test
+c1 = Circle(o, 1)
+# print(c1.__str__())
+c2 = Circle(o, 2)
+c2.__str__()
+# print(c1.area())
+# print(c2.envelops(c1))
+# print(c1.envelops(c2))
+
+s1 = Square(Point(-1, 0), 1)
+s1.__str__()
+s2 = Square(Point(-1,1),2)
+s3 = Square(Point(-1.1,1.1), 2.2)
+print(c1.envelops(s2))
+print(c1.envelops(s1))
+print(c2.envelops(s1))
+print(c2.envelops(s2))
+# print(s1.top_left().px, s1.top_left().py)
+print(s3.envelops(s2))
+print(s2.envelops(s3))
+print(s3.envelops(c1))
+print(s2.envelops(c1))
+print(c1.envelops(s2))
